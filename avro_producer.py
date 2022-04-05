@@ -12,16 +12,12 @@ TOPIC_NAME = 'xxx'
 
 value_schema_str = """
 {
-   "namespace": "my.test",
+   "namespace": "my.test2",
    "name": "value",
    "type": "record",
    "fields" : [
      {
-       "name" : "name",
-       "type" : "string"
-     },
-     {
-        "name" : "xxxxx",
+        "name" : "abcd",
         "type": "string",
         "default" : "1234"
      }
@@ -47,6 +43,11 @@ sr_client = SchemaRegistryClient({
     'url': SR_URL,
     'basic.auth.user.info': SR_BASIC_AUTH_USER_INFO,
 })
+
+# https://docs.confluent.io/platform/current/schema-registry/develop/api.html#put--config-(string-%20subject)
+# BACKWARD, BACKWARD_TRANSITIVE, FORWARD, FORWARD_TRANSITIVE, FULL, FULL_TRANSITIVE, NONE
+print(sr_client.get_compatibility('xxx-value'))
+sr_client.set_compatibility(level='NONE', subject_name='xxx-value')
 
 # producer configurations
 # for full list of configurations, see:
