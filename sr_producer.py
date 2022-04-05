@@ -10,6 +10,9 @@ except:
 
 TOPIC_NAME = 'xxx'
 
+
+# https://avro.apache.org/docs/current/gettingstartedpython.html
+# https://avro.apache.org/docs/current/spec.html#schema_record
 value_schema_str = """
 {
    "namespace": "my.test2",

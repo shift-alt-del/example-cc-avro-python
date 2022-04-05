@@ -21,6 +21,6 @@ also refer to the [Official example](https://github.com/confluentinc/examples/tr
 ## Run:
 
 ```
-python3 avro_producer.py
-python3 avro_consumer.py
+python3 sr_producer.py
+python3 sr_consumer.py
 ```
